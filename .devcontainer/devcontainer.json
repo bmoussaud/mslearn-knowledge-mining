@@ -1,0 +1,31 @@
+{
+  "name": "Python Development Container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  
+  "features": {
+    "ghcr.io/azure/azure-dev/azd:latest": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+
+  "postCreateCommand": "pip install uv",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-azurecli"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.formatting.provider": "none"
+      }
+    }
+  },
+
+  "forwardPorts": [],
+  
+  "remoteUser": "vscode"
+}
